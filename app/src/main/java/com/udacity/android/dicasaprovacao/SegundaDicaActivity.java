@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class PrimeiraDicaActivity extends ActionBarActivity {
+public class SegundaDicaActivity extends ActionBarActivity {
 
     Button btnOpcaoUm;
     Button btnOpcaoDois;
@@ -25,13 +25,17 @@ public class PrimeiraDicaActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_primeira_dica);
+        setContentView(R.layout.activity_segunda_dica);
+
         btnOpcaoUm = (Button) findViewById(R.id.btn_opcao_um);
         btnOpcaoDois = (Button) findViewById(R.id.btn_opcao_dois);
         btnOpcaoTres = (Button) findViewById(R.id.btn_opcao_tres);
         imageView = (ImageView) findViewById(R.id.image_dica);
         txtCorreto = (TextView) findViewById(R.id.lbl_correto);
         txtIncorreto = (TextView) findViewById(R.id.lbl_incorreto);
+
+        TextView txtPlacar = (TextView) findViewById(R.id.lbl_pontuacao_valor);
+        txtPlacar.setText(String.valueOf(obterPlacar()));
     }
 
     public void mtdOpcaoUm(View v) {
@@ -41,8 +45,27 @@ public class PrimeiraDicaActivity extends ActionBarActivity {
         marcarOpcaoCorreta();
         desabilitarOpcoes();
 
-        //Colocar a imagem tranparente.
-        //http://stackoverflow.com/questions/16755551/alternative-to-setalpha-in-api-level-8
+        //Exibir o texto CORRRETO ou INCORRETO.
+        txtIncorreto.setVisibility(View.VISIBLE);
+        RotateAnimation animation = new RotateAnimation(0, -45);
+        animation.setDuration(100);
+        animation.setFillAfter(true);
+        txtIncorreto.startAnimation(animation);
+        if (Build.VERSION.SDK_INT < 11) {
+            //Colocar a imagem tranparente.
+            imageView.setAlpha(30);
+        } else {
+            imageView.setAlpha(0.3f);
+        }
+    }
+
+    public void mtdOpcaoDois(View v) {
+        btnOpcaoDois.setBackgroundColor(Color.RED);
+        btnOpcaoDois.setTextColor(Color.WHITE);
+
+        marcarOpcaoCorreta();
+        desabilitarOpcoes();
+
         //Exibir o texto CORRRETO ou INCORRETO.
         txtIncorreto.setVisibility(View.VISIBLE);
         RotateAnimation animation = new RotateAnimation(0, -45);
@@ -54,9 +77,14 @@ public class PrimeiraDicaActivity extends ActionBarActivity {
         } else {
             imageView.setAlpha(0.3f);
         }
+
+        //Atualiza placar
+        int valorPlacar = obterPlacar();
+        valorPlacar++;
+        placar(valorPlacar);
     }
 
-    public void mtdOpcaoDois(View v) {
+    public void mtdOpcaoTres(View v) {
         marcarOpcaoCorreta();
         desabilitarOpcoes();
 
@@ -71,48 +99,14 @@ public class PrimeiraDicaActivity extends ActionBarActivity {
         } else {
             imageView.setAlpha(0.3f);
         }
-
-        //Marca o placar com valor 1.
-        placar(1);
-
-        //TODO: incrementar a pontuação
-        //TODO: customizar os botoes
-        //http://angrytools.com/android/button/
-        //http://belencruz.com/2012/12/rounded-button-with-shadow-in-android/
-        // http://mrbool.com/how-to-customize-different-buttons-in-android/27747
-        //https://romannurik.github.io/AndroidAssetStudio/index.html
-
-        //TODO: tamanho da font de acordo com tamanho da tela.
-        //http://stackoverflow.com/questions/9877946/text-size-and-different-android-screen-sizes
-    }
-
-    public void mtdOpcaoTres(View v) {
-        btnOpcaoTres.setBackgroundColor(Color.RED);
-        btnOpcaoTres.setTextColor(Color.WHITE);
-
-        marcarOpcaoCorreta();
-        desabilitarOpcoes();
-
-        //Exibir o texto CORRRETO ou INCORRETO.
-        txtIncorreto.setVisibility(View.VISIBLE);
-        RotateAnimation animation = new RotateAnimation(0, -45);
-        animation.setDuration(100);
-        animation.setFillAfter(true);
-        txtIncorreto.startAnimation(animation);
-        if (Build.VERSION.SDK_INT < 11) {
-            imageView.setAlpha(30);
-        } else {
-            imageView.setAlpha(0.3f);
-        }
     }
 
     private void marcarOpcaoCorreta() {
-        btnOpcaoDois.setBackgroundColor(Color.parseColor("#4CAF50"));
-        btnOpcaoDois.setTextColor(Color.WHITE);
+        btnOpcaoTres.setBackgroundColor(Color.parseColor("#4CAF50"));
+        btnOpcaoTres.setTextColor(Color.WHITE);
     }
 
-    public void placar(int pontuacao) {
-        //SharedPreferences sharedPref = PrimeiraDicaActivity.this.getSharedPreferences(getString(R.string.shared_pontuacao), Context.MODE_PRIVATE);
+    private void placar(int pontuacao) {
         SharedPreferences sharedPref = this.getSharedPreferences(getString(R.string.shared_pontuacao), Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPref.edit();
 
@@ -125,26 +119,22 @@ public class PrimeiraDicaActivity extends ActionBarActivity {
         editor.commit();
     }
 
-    public void desabilitarOpcoes() {
+    private int obterPlacar() {
+        Context context = this;
+        SharedPreferences sharedPref = context.getSharedPreferences(getString(R.string.shared_pontuacao), Context.MODE_PRIVATE);
+        return sharedPref.getInt(getString(R.string.shared_pontuacao), 0);
+    }
+
+
+    private void desabilitarOpcoes() {
         btnOpcaoUm.setClickable(false);
         btnOpcaoDois.setClickable(false);
         btnOpcaoTres.setClickable(false);
     }
 
     public void mtdContinuar(View view) {
-        Intent intent = new Intent(this, SegundaDicaActivity.class);
-        //recreate();
+        Intent intent = new Intent(this, TerceiraDicaActivity.class);
         finish();
         startActivity(intent);
     }
-
-//    @Override
-//    public void recreate() {
-//        if (Build.VERSION.SDK_INT <= 11) {
-//            startActivity(getIntent());
-//            finish();
-//        } else {
-//            super.recreate();
-//        }
-//    }
 }

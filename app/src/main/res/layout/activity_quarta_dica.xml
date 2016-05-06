@@ -49,7 +49,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingBottom="8dp"
-                    android:text="@string/lbl_primeira_dica" />
+                    android:text="@string/lbl_quarta_dica" />
 
                 <ImageView
                     android:id="@+id/image_dica"
@@ -66,7 +66,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:onClick="mtdOpcaoUm"
-                    android:text="@string/btn_opcao_um_dica_um" />
+                    android:text="@string/btn_opcao_um_dica_quatro" />
 
                 <Button
                     android:id="@+id/btn_opcao_dois"
@@ -74,7 +74,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:onClick="mtdOpcaoDois"
-                    android:text="@string/btn_opcao_dois_dica_um" />
+                    android:text="@string/btn_opcao_dois_dica_quatro" />
 
                 <Button
                     android:id="@+id/btn_opcao_tres"
@@ -82,7 +82,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:onClick="mtdOpcaoTres"
-                    android:text="@string/btn_opcao_tres_dica_um" />
+                    android:text="@string/btn_opcao_tres_dica_quatro" />
 
             </LinearLayout>
 

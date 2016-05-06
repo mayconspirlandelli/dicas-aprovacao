@@ -11,9 +11,37 @@
     <string name="lbl_pontuacao">Pontuação</string>
     <string name="btn_continuar">Continuar</string>
     <string name="lbl_primeira_dica">1ª Dica é:</string>
-    <string name="btn_organizacao">Organização</string>
-    <string name="btn_planejamento">Planejamento</string>
-    <string name="btn_motivacao">Motivação</string>
+    <string name="btn_opcao_um_dica_um">Organização</string>
+    <string name="btn_opcao_dois_dica_um">Planejamento</string>
+    <string name="btn_opcao_tres_dica_um">Motivação</string>
     <string name="title_activity_primeira_dica">PrimeiraDicaActivity</string>
+
+
+    <string name="shared_pontuacao">PONTUACAO</string>
+    <string name="btn_detalhes">Detalhes</string>
+
+
+    <!--Tela Segunda Dica-->
+    <string name="title_activity_segunda_dica">SegundaDicaActivity</string>
+    <string name="lbl_segunda_dica">2ª Dica é:</string>
+    <string name="btn_opcao_um_dica_dois">Perseverança</string>
+    <string name="btn_opcao_dois_dica_dois">Fazer Intervalos</string>
+    <string name="btn_opcao_tres_dica_dois">Método de estudo</string>
+
+
+    <!--Tela Terceira Dica-->
+    <string name="title_activity_terceira_dica">TerceiraDicaActivity</string>
+    <string name="lbl_terceira_dica">3ª Dica é:</string>
+    <string name="btn_opcao_um_dica_tres">Manter foco</string>
+    <string name="btn_opcao_dois_dica_tres">Disciplina</string>
+    <string name="btn_opcao_tres_dica_tres">Estudar em grupo</string>
+
+
+    <!--Tela Terceira Dica-->
+    <string name="title_activity_quarta_dica">QuartaDicaActivity</string>
+    <string name="lbl_quarta_dica">4ª Dica é:</string>
+    <string name="btn_opcao_um_dica_quatro">Pensamento</string>
+    <string name="btn_opcao_dois_dica_quatro">Motivação</string>
+    <string name="btn_opcao_tres_dica_quatro">Organização</string>
 
 </resources>
