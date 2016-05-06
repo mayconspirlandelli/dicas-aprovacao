@@ -10,51 +10,64 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.udacity.android.dicasaprovacao.MainActivity">
 
-    <TextView
-        style="@style/CustomText"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="16dp"
-        android:text="@string/lbl_teste_conhecimento" />
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
-    <ImageView
-        android:id="@+id/android_cookie_image_view"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:scaleType="centerCrop"
-        android:src="@drawable/dicas" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    <TextView
-        style="@style/CustomText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#ffff"
-        android:paddingBottom="16dp"
-        android:text="@string/lbl_dicas_aprovacao"
-        android:textColor="#B71C1C"
-        android:textSize="34sp"
-        android:textStyle="bold" />
+            <TextView
+                style="@style/CustomText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="16dp"
+                android:text="@string/lbl_teste_conhecimento" />
 
-    <TextView
-        style="@style/CustomText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:paddingBottom="8dp"
-        android:paddingTop="8dp"
-        android:text="@string/lbl_concurso_enem"
-        android:textColor="#1B5E20"
-        android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/android_cookie_image_view"
+                android:layout_width="match_parent"
+                android:adjustViewBounds="true"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:scaleType="centerInside"
+                android:src="@drawable/dicas" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:background="#4CAF50"
-        android:text="@string/btn_jogar"
-        android:textAllCaps="true"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="#FFFFFF"
-        android:onClick="mtdJogar"
-        android:textStyle="bold" />
+            <TextView
+                style="@style/CustomText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffff"
+                android:paddingBottom="16dp"
+                android:text="@string/lbl_dicas_aprovacao"
+                android:textColor="#B71C1C"
+                android:textSize="34sp"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/CustomText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="8dp"
+                android:paddingTop="8dp"
+                android:text="@string/lbl_concurso_enem"
+                android:textColor="#1B5E20"
+                android:textStyle="bold" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="#4CAF50"
+                android:onClick="mtdJogar"
+                android:text="@string/btn_jogar"
+                android:textAllCaps="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
