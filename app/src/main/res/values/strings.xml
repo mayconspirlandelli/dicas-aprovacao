@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Dicas de Aprovacao</string>
+    <string name="action_settings">Configurações</string>
+
+    <string name="lbl_teste_conhecimento">Teste seu conhecimento</string>
+    <string name="lbl_dicas_aprovacao">de aprovação</string>
+    <string name="lbl_concurso_enem">Concurso Público e Enem</string>
+    <string name="btn_jogar">Jogar</string>
+
+    <!--Tela Primeria Dica-->
+    <string name="lbl_pontuacao">Pontuação</string>
+    <string name="btn_continuar">Continuar</string>
+    <string name="lbl_primeira_dica">1ª Dica é:</string>
+    <string name="btn_organizacao">Organização</string>
+    <string name="btn_planejamento">Planejamento</string>
+    <string name="btn_motivacao">Motivação</string>
+    <string name="title_activity_primeira_dica">PrimeiraDicaActivity</string>
+
+</resources>
