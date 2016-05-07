@@ -96,9 +96,6 @@ public class SegundaDicaActivity extends ActionBarActivity {
         }
 
         //Atualiza placar
-//        int valorPlacar = Utilitario.obterPlacar(this);
-//        valorPlacar++;
-//        placar(valorPlacar);
         Utilitario.atualizarPlacar(this);
     }
 

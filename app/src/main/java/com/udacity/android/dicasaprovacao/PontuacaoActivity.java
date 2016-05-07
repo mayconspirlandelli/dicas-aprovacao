@@ -1,5 +1,6 @@
 package com.udacity.android.dicasaprovacao;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.widget.TextView;
@@ -30,10 +31,9 @@ public class PontuacaoActivity extends ActionBarActivity {
 
         if (resultado >= 0 && resultado <= 2) {
             txtMensagemFinal.setText(getText(R.string.lbl_aviso));
+            txtMensagemFinal.setTextColor(Color.RED);
         } else {
             txtMensagemFinal.setText(getText(R.string.lbl_parabens));
         }
-
     }
-
 }

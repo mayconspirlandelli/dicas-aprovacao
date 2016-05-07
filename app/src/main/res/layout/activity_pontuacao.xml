@@ -41,7 +41,5 @@
         android:textColor="#4CAF50"
         android:textSize="28sp"
         android:textStyle="italic" />
-
-
 </LinearLayout>
 

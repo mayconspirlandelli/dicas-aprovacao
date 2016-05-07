@@ -53,14 +53,12 @@
                     android:paddingBottom="8dp"
                     android:text="@string/lbl_terceira_dica" />
 
-                <ImageView
-                    android:id="@+id/image_dica"
+                <TextView
+                    android:id="@+id/lbl_texto_terceira_dica"
+                    style="@style/CustomTextDicas"
                     android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/planejamento" />
+                    android:layout_height="wrap_content"
+                    android:text="@string/lbl_texto_terceira_dica" />
 
                 <Button
                     android:id="@+id/btn_opcao_um"
@@ -126,9 +124,9 @@
     <Button
         android:id="@+id/btn_continuar"
         style="@style/CustomButtonContinuar"
-        android:onClick="mtdContinuar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="mtdContinuar"
         android:text="@string/btn_continuar" />
 
     <Button

@@ -8,7 +8,7 @@
     <string name="btn_jogar">Jogar</string>
 
     <!--Tela Primeria Dica-->
-    <string name="lbl_pontuacao">Pontuação</string>
+    <string name="lbl_pontuacao">Pontuação:</string>
     <string name="btn_continuar">Continuar</string>
     <string name="lbl_primeira_dica">1ª Dica é:</string>
     <string name="btn_opcao_um_dica_um">Organização</string>
@@ -20,7 +20,27 @@
     <string name="shared_pontuacao">PONTUACAO</string>
     <string name="btn_detalhes">Detalhes</string>
     <string name="lbl_parabens">Parabéns, continue seguindo essas dicas, que você terá sucesso no seu objetivo!</string>
-    <string name="lbl_aviso">Aviso!</string>
+    <string name="lbl_aviso">Pratique essas dicas na sua vida, que você terá sucesso no seu objetivo!</string>
+    <string name="lbl_texto_segunda_dica">
+        Fazer resumos; \n
+        Grifar as principais ideias; \n
+        Praticar exercícios; \n
+        Ler em voz alta; \n
+        Fazer provas anteriores; \n
+        Escutar o áudio das aulas; \n
+        Estudar em grupos; \n
+        Praticar muitos exercícios.
+    </string>
+
+    <string name="lbl_texto_terceira_dica">
+        Planeje seu dia; \n
+        Ter uma rotina de estudos; \n
+        Escolher ambiente tranquilo; \n
+        Eliminar as distrações; \n
+        Fazer intervalos; \n
+        Cuidar bem da sua saúde; \n
+        Praticar exercícios físicos.
+    </string>
 
 
     <!--Tela Segunda Dica-->

@@ -53,14 +53,21 @@
                     android:paddingBottom="8dp"
                     android:text="@string/lbl_segunda_dica" />
 
-                <ImageView
-                    android:id="@+id/image_dica"
+                <!--<ImageView-->
+                <!--android:id="@+id/image_dica"-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="0dp"-->
+                <!--android:layout_weight="1"-->
+                <!--android:adjustViewBounds="true"-->
+                <!--android:scaleType="centerCrop"-->
+                <!--android:src="@drawable/planejamento" />-->
+
+                <TextView
+                    android:id="@+id/lbl_texto_segunda_dica"
+                    style="@style/CustomTextDicas"
                     android:layout_width="wrap_content"
-                    android:layout_height="0dp"
-                    android:layout_weight="1"
-                    android:adjustViewBounds="true"
-                    android:scaleType="centerCrop"
-                    android:src="@drawable/planejamento" />
+                    android:layout_height="wrap_content"
+                    android:text="@string/lbl_texto_segunda_dica" />
 
                 <Button
                     android:id="@+id/btn_opcao_um"
