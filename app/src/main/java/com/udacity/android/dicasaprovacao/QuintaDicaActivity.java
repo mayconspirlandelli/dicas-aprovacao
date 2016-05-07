@@ -1,8 +1,6 @@
 package com.udacity.android.dicasaprovacao;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,6 +10,8 @@ import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.udacity.android.dicasaprovacao.utils.Utilitario;
 
 public class QuintaDicaActivity extends ActionBarActivity {
 
@@ -35,7 +35,7 @@ public class QuintaDicaActivity extends ActionBarActivity {
         txtIncorreto = (TextView) findViewById(R.id.lbl_incorreto);
 
         TextView txtPlacar = (TextView) findViewById(R.id.lbl_pontuacao_valor);
-        txtPlacar.setText(String.valueOf(obterPlacar()));
+        txtPlacar.setText(String.valueOf(Utilitario.obterPlacar(this)));
     }
 
     public void mtdOpcaoUm(View v) {
@@ -77,11 +77,6 @@ public class QuintaDicaActivity extends ActionBarActivity {
         } else {
             imageView.setAlpha(0.3f);
         }
-
-        //Atualiza placar
-        int valorPlacar = obterPlacar();
-        valorPlacar++;
-        placar(valorPlacar);
     }
 
     public void mtdOpcaoTres(View v) {
@@ -100,32 +95,15 @@ public class QuintaDicaActivity extends ActionBarActivity {
         } else {
             imageView.setAlpha(0.3f);
         }
+
+        //Atualiza placar
+        Utilitario.atualizarPlacar(this);
     }
 
     private void marcarOpcaoCorreta() {
         btnOpcaoTres.setBackgroundColor(Color.parseColor("#4CAF50"));
         btnOpcaoTres.setTextColor(Color.WHITE);
     }
-
-    private void placar(int pontuacao) {
-        SharedPreferences sharedPref = this.getSharedPreferences(getString(R.string.shared_pontuacao), Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-
-        // Limpar as configurações anteriores.
-        editor.clear();
-        editor.commit();
-
-        // Salva as novas configurações.
-        editor.putInt(getString(R.string.shared_pontuacao), pontuacao);
-        editor.commit();
-    }
-
-    private int obterPlacar() {
-        Context context = this;
-        SharedPreferences sharedPref = context.getSharedPreferences(getString(R.string.shared_pontuacao), Context.MODE_PRIVATE);
-        return sharedPref.getInt(getString(R.string.shared_pontuacao), 0);
-    }
-
 
     private void desabilitarOpcoes() {
         btnOpcaoUm.setClickable(false);

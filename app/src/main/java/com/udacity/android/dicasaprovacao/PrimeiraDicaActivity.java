@@ -1,8 +1,6 @@
 package com.udacity.android.dicasaprovacao;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,6 +10,9 @@ import android.view.animation.RotateAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import com.udacity.android.dicasaprovacao.utils.Utilitario;
+
 
 public class PrimeiraDicaActivity extends ActionBarActivity {
 
@@ -32,6 +33,10 @@ public class PrimeiraDicaActivity extends ActionBarActivity {
         imageView = (ImageView) findViewById(R.id.image_dica);
         txtCorreto = (TextView) findViewById(R.id.lbl_correto);
         txtIncorreto = (TextView) findViewById(R.id.lbl_incorreto);
+
+        //Zera a pontuação.
+        Utilitario.placar(this, 0);
+
     }
 
     public void mtdOpcaoUm(View v) {
@@ -73,7 +78,8 @@ public class PrimeiraDicaActivity extends ActionBarActivity {
         }
 
         //Marca o placar com valor 1.
-        placar(1);
+        Utilitario.atualizarPlacar(this);
+
 
         //TODO: incrementar a pontuação
         //TODO: customizar os botoes
@@ -109,20 +115,6 @@ public class PrimeiraDicaActivity extends ActionBarActivity {
     private void marcarOpcaoCorreta() {
         btnOpcaoDois.setBackgroundColor(Color.parseColor("#4CAF50"));
         btnOpcaoDois.setTextColor(Color.WHITE);
-    }
-
-    public void placar(int pontuacao) {
-        //SharedPreferences sharedPref = PrimeiraDicaActivity.this.getSharedPreferences(getString(R.string.shared_pontuacao), Context.MODE_PRIVATE);
-        SharedPreferences sharedPref = this.getSharedPreferences(getString(R.string.shared_pontuacao), Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPref.edit();
-
-        // Limpar as configurações anteriores.
-        editor.clear();
-        editor.commit();
-
-        // Salva as novas configurações.
-        editor.putInt(getString(R.string.shared_pontuacao), pontuacao);
-        editor.commit();
     }
 
     public void desabilitarOpcoes() {

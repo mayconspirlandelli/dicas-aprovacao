@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.widget.TextView;
 
+import com.udacity.android.dicasaprovacao.utils.Utilitario;
+
 public class PontuacaoActivity extends ActionBarActivity {
 
     TextView txtPontuacaoFinal;
@@ -22,9 +24,9 @@ public class PontuacaoActivity extends ActionBarActivity {
 
     private void publicacaoResultado() {
 
-        int resultado = 5;
+        int resultado = Utilitario.obterPlacar(this);
 
-        txtPontuacaoFinal.setText("5");
+        txtPontuacaoFinal.setText(String.valueOf(resultado));
 
         if (resultado >= 0 && resultado <= 2) {
             txtMensagemFinal.setText(getText(R.string.lbl_aviso));
