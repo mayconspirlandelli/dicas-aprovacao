@@ -1,6 +1,7 @@
 package com.udacity.android.dicasaprovacao;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -132,9 +133,9 @@ public class TerceiraDicaActivity extends ActionBarActivity {
     }
 
     public void mtdContinuar(View view) {
-//        Intent intent = new Intent(this, QuartaDicaActivity.class);
+        Intent intent = new Intent(this, QuartaDicaActivity.class);
 //        finish();
-//        startActivity(intent);
+        startActivity(intent);
     }
 }
 

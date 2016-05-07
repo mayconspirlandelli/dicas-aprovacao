@@ -134,7 +134,7 @@ public class SegundaDicaActivity extends ActionBarActivity {
 
     public void mtdContinuar(View view) {
         Intent intent = new Intent(this, TerceiraDicaActivity.class);
-        finish();
+//        finish();
         startActivity(intent);
     }
 }

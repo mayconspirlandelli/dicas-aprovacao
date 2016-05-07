@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class QuartaDicaActivity extends ActionBarActivity {
+public class QuintaDicaActivity extends ActionBarActivity {
 
     Button btnOpcaoUm;
     Button btnOpcaoDois;
@@ -25,7 +25,7 @@ public class QuartaDicaActivity extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quarta_dica);
+        setContentView(R.layout.activity_quinta_dica);
 
         btnOpcaoUm = (Button) findViewById(R.id.btn_opcao_um);
         btnOpcaoDois = (Button) findViewById(R.id.btn_opcao_dois);
@@ -60,30 +60,8 @@ public class QuartaDicaActivity extends ActionBarActivity {
     }
 
     public void mtdOpcaoDois(View v) {
-        marcarOpcaoCorreta();
-        desabilitarOpcoes();
-
-        //Exibir o texto CORRRETO ou INCORRETO.
-        txtCorreto.setVisibility(View.VISIBLE);
-        RotateAnimation animation = new RotateAnimation(0, -45);
-        animation.setDuration(100);
-        animation.setFillAfter(true);
-        txtCorreto.startAnimation(animation);
-        if (Build.VERSION.SDK_INT < 11) {
-            imageView.setAlpha(30);
-        } else {
-            imageView.setAlpha(0.3f);
-        }
-
-        //Atualiza placar
-        int valorPlacar = obterPlacar();
-        valorPlacar++;
-        placar(valorPlacar);
-    }
-
-    public void mtdOpcaoTres(View v) {
-        btnOpcaoTres.setBackgroundColor(Color.RED);
-        btnOpcaoTres.setTextColor(Color.WHITE);
+        btnOpcaoDois.setBackgroundColor(Color.RED);
+        btnOpcaoDois.setTextColor(Color.WHITE);
 
         marcarOpcaoCorreta();
         desabilitarOpcoes();
@@ -99,11 +77,34 @@ public class QuartaDicaActivity extends ActionBarActivity {
         } else {
             imageView.setAlpha(0.3f);
         }
+
+        //Atualiza placar
+        int valorPlacar = obterPlacar();
+        valorPlacar++;
+        placar(valorPlacar);
+    }
+
+    public void mtdOpcaoTres(View v) {
+
+        marcarOpcaoCorreta();
+        desabilitarOpcoes();
+
+        //Exibir o texto CORRRETO ou INCORRETO.
+        txtCorreto.setVisibility(View.VISIBLE);
+        RotateAnimation animation = new RotateAnimation(0, -45);
+        animation.setDuration(100);
+        animation.setFillAfter(true);
+        txtCorreto.startAnimation(animation);
+        if (Build.VERSION.SDK_INT < 11) {
+            imageView.setAlpha(30);
+        } else {
+            imageView.setAlpha(0.3f);
+        }
     }
 
     private void marcarOpcaoCorreta() {
-        btnOpcaoDois.setBackgroundColor(Color.parseColor("#4CAF50"));
-        btnOpcaoDois.setTextColor(Color.WHITE);
+        btnOpcaoTres.setBackgroundColor(Color.parseColor("#4CAF50"));
+        btnOpcaoTres.setTextColor(Color.WHITE);
     }
 
     private void placar(int pontuacao) {
@@ -133,9 +134,10 @@ public class QuartaDicaActivity extends ActionBarActivity {
     }
 
     public void mtdContinuar(View view) {
-        Intent intent = new Intent(this, QuintaDicaActivity.class);
-//        finish();
+        Intent intent = new Intent(this, PontuacaoActivity.class);
+////        finish();
         startActivity(intent);
     }
 }
+
 

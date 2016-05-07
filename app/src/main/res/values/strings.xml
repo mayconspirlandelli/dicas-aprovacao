@@ -19,6 +19,8 @@
 
     <string name="shared_pontuacao">PONTUACAO</string>
     <string name="btn_detalhes">Detalhes</string>
+    <string name="lbl_parabens">Parabéns, continue seguindo essas dicas, que você terá sucesso no seu objetivo!</string>
+    <string name="lbl_aviso">Aviso!</string>
 
 
     <!--Tela Segunda Dica-->
@@ -37,11 +39,20 @@
     <string name="btn_opcao_tres_dica_tres">Estudar em grupo</string>
 
 
-    <!--Tela Terceira Dica-->
+    <!--Tela Quarta Dica-->
     <string name="title_activity_quarta_dica">QuartaDicaActivity</string>
     <string name="lbl_quarta_dica">4ª Dica é:</string>
     <string name="btn_opcao_um_dica_quatro">Pensamento</string>
     <string name="btn_opcao_dois_dica_quatro">Motivação</string>
     <string name="btn_opcao_tres_dica_quatro">Organização</string>
+
+    <!--Tela Quinta  Dica-->
+    <string name="title_activity_quinta_dica">QuintaDicaActivity</string>
+    <string name="lbl_quinta_dica">5ª Dica é:</string>
+    <string name="btn_opcao_um_dica_cinco">Disciplina</string>
+    <string name="btn_opcao_dois_dica_cinco">Planejamento</string>
+    <string name="btn_opcao_tres_dica_cinco">Perseverança</string>
+    <string name="title_activity_pontuacao">PontuacaoActivity</string>
+
 
 </resources>

@@ -29,7 +29,13 @@
             android:label="@string/title_activity_terceira_dica" />
         <activity
             android:name=".QuartaDicaActivity"
-            android:label="@string/title_activity_quarta_dica"></activity>
+            android:label="@string/title_activity_quarta_dica" />
+        <activity
+            android:name=".QuintaDicaActivity"
+            android:label="@string/title_activity_quinta_dica" />
+        <activity
+            android:name=".PontuacaoActivity"
+            android:label="@string/title_activity_pontuacao"></activity>
     </application>
 
 </manifest>

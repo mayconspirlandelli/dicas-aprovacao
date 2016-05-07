@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin">
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.udacity.android.dicasaprovacao.QuintaDicaActivity">
 
     <TextView
         android:id="@+id/lbl_pontuacao"
@@ -49,7 +51,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingBottom="8dp"
-                    android:text="@string/lbl_quarta_dica" />
+                    android:text="@string/lbl_quinta_dica" />
 
                 <ImageView
                     android:id="@+id/image_dica"
@@ -58,7 +60,7 @@
                     android:layout_weight="1"
                     android:adjustViewBounds="true"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/motivacao" />
+                    android:src="@drawable/perseveranca" />
 
                 <Button
                     android:id="@+id/btn_opcao_um"
@@ -66,7 +68,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:onClick="mtdOpcaoUm"
-                    android:text="@string/btn_opcao_um_dica_quatro" />
+                    android:text="@string/btn_opcao_um_dica_cinco" />
 
                 <Button
                     android:id="@+id/btn_opcao_dois"
@@ -74,7 +76,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:onClick="mtdOpcaoDois"
-                    android:text="@string/btn_opcao_dois_dica_quatro" />
+                    android:text="@string/btn_opcao_dois_dica_cinco" />
 
                 <Button
                     android:id="@+id/btn_opcao_tres"
@@ -82,7 +84,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:onClick="mtdOpcaoTres"
-                    android:text="@string/btn_opcao_tres_dica_quatro" />
+                    android:text="@string/btn_opcao_tres_dica_cinco" />
 
             </LinearLayout>
 
@@ -135,5 +137,5 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="false"
-        android:text="@string/btn_continuar" />
+        android:text="@string/btn_detalhes" />
 </RelativeLayout>
