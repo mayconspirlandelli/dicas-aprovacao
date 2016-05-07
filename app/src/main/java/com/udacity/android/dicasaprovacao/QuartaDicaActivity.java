@@ -112,7 +112,7 @@ public class QuartaDicaActivity extends ActionBarActivity {
 
     public void mtdContinuar(View view) {
         Intent intent = new Intent(this, QuintaDicaActivity.class);
-//        finish();
+        finish();
         startActivity(intent);
     }
 }

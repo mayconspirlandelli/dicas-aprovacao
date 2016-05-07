@@ -80,16 +80,6 @@ public class PrimeiraDicaActivity extends ActionBarActivity {
         //Marca o placar com valor 1.
         Utilitario.atualizarPlacar(this);
 
-
-        //TODO: incrementar a pontuação
-        //TODO: customizar os botoes
-        //http://angrytools.com/android/button/
-        //http://belencruz.com/2012/12/rounded-button-with-shadow-in-android/
-        // http://mrbool.com/how-to-customize-different-buttons-in-android/27747
-        //https://romannurik.github.io/AndroidAssetStudio/index.html
-
-        //TODO: tamanho da font de acordo com tamanho da tela.
-        //http://stackoverflow.com/questions/9877946/text-size-and-different-android-screen-sizes
     }
 
     public void mtdOpcaoTres(View v) {
@@ -125,7 +115,7 @@ public class PrimeiraDicaActivity extends ActionBarActivity {
 
     public void mtdContinuar(View view) {
         Intent intent = new Intent(this, SegundaDicaActivity.class);
-//        finish();
+        finish();
         startActivity(intent);
     }
 }

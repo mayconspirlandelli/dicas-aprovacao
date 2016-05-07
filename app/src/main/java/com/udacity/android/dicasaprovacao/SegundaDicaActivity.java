@@ -2,13 +2,11 @@ package com.udacity.android.dicasaprovacao;
 
 import android.content.Intent;
 import android.graphics.Color;
-import android.os.Build;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.View;
 import android.view.animation.RotateAnimation;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.udacity.android.dicasaprovacao.utils.Utilitario;
@@ -18,7 +16,6 @@ public class SegundaDicaActivity extends ActionBarActivity {
     Button btnOpcaoUm;
     Button btnOpcaoDois;
     Button btnOpcaoTres;
-    ImageView imageView;
     TextView txtCorreto;
     TextView txtIncorreto;
 
@@ -30,7 +27,6 @@ public class SegundaDicaActivity extends ActionBarActivity {
         btnOpcaoUm = (Button) findViewById(R.id.btn_opcao_um);
         btnOpcaoDois = (Button) findViewById(R.id.btn_opcao_dois);
         btnOpcaoTres = (Button) findViewById(R.id.btn_opcao_tres);
-        imageView = (ImageView) findViewById(R.id.image_dica);
         txtCorreto = (TextView) findViewById(R.id.lbl_correto);
         txtIncorreto = (TextView) findViewById(R.id.lbl_incorreto);
 
@@ -51,12 +47,6 @@ public class SegundaDicaActivity extends ActionBarActivity {
         animation.setDuration(100);
         animation.setFillAfter(true);
         txtIncorreto.startAnimation(animation);
-        if (Build.VERSION.SDK_INT < 11) {
-            //Colocar a imagem tranparente.
-            imageView.setAlpha(30);
-        } else {
-            imageView.setAlpha(0.3f);
-        }
     }
 
     public void mtdOpcaoDois(View v) {
@@ -72,11 +62,6 @@ public class SegundaDicaActivity extends ActionBarActivity {
         animation.setDuration(100);
         animation.setFillAfter(true);
         txtIncorreto.startAnimation(animation);
-        if (Build.VERSION.SDK_INT < 11) {
-            imageView.setAlpha(30);
-        } else {
-            imageView.setAlpha(0.3f);
-        }
     }
 
     public void mtdOpcaoTres(View v) {
@@ -89,11 +74,6 @@ public class SegundaDicaActivity extends ActionBarActivity {
         animation.setDuration(100);
         animation.setFillAfter(true);
         txtCorreto.startAnimation(animation);
-        if (Build.VERSION.SDK_INT < 11) {
-            imageView.setAlpha(30);
-        } else {
-            imageView.setAlpha(0.3f);
-        }
 
         //Atualiza placar
         Utilitario.atualizarPlacar(this);
@@ -112,7 +92,7 @@ public class SegundaDicaActivity extends ActionBarActivity {
 
     public void mtdContinuar(View view) {
         Intent intent = new Intent(this, TerceiraDicaActivity.class);
-//        finish();
+        finish();
         startActivity(intent);
     }
 }
